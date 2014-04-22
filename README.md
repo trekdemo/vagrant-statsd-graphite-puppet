@@ -1,4 +1,4 @@
-# statsd + graphite to go
+# statsd + graphite + grafana to go
 
 Provision a virtual machine with vagrant and puppet to play around with statsd and graphite
 
@@ -12,7 +12,7 @@ Provision a virtual machine with vagrant and puppet to play around with statsd a
 ## Installation
 
 ```
-git clone https://github.com/Jimdo/vagrant-statsd-graphite-puppet.git
+git clone https://github.com/trekdemo/vagrant-statsd-graphite-puppet.git
 cd vagrant-statsd-graphite-puppet
 vagrant up
 open http://localhost:8080/
@@ -25,3 +25,4 @@ Created by jimdo https://github.com/Jimdo
 Contributors
 
 * liuggio https://github.com/liuggio
+* trekdemo https://github.com/trekdemo
