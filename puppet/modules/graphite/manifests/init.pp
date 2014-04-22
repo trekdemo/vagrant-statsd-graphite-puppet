@@ -45,20 +45,20 @@ class graphite {
      content => '
 [
   {
-    "pk": 1, 
-    "model": "auth.user", 
+    "pk": 1,
+    "model": "auth.user",
     "fields": {
-      "username": "admin", 
-      "first_name": "", 
-      "last_name": "", 
-      "is_active": true, 
-      "is_superuser": true, 
-      "is_staff": true, 
-      "last_login": "2011-09-20 17:02:14", 
-      "groups": [], 
-      "user_permissions": [], 
-      "password": "sha1$1b11b$edeb0a67a9622f1f2cfeabf9188a711f5ac7d236", 
-      "email": "root@example.com", 
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2011-09-20 17:02:14",
+      "groups": [],
+      "user_permissions": [],
+      "password": "sha1$1b11b$edeb0a67a9622f1f2cfeabf9188a711f5ac7d236",
+      "email": "root@example.com",
       "date_joined": "2011-09-20 17:02:14"
     }
   }
@@ -80,13 +80,13 @@ class graphite {
   }
 
   file { "/opt/graphite/webapp/graphite/local_settings.py" :
-    source => "/tmp/vagrant-puppet/modules-0/graphite/files/local_settings.py",
+    source => "puppet:///modules/graphite/local_settings.py",
     ensure => present,
     require => File["/opt/graphite/storage"]
  }
 
   file { "/etc/apache2/sites-available/default" :
-    content =>' 
+    content =>'
 <VirtualHost *:80>
         ServerName graphite
         DocumentRoot "/opt/graphite/webapp"
