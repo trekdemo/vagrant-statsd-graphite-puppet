@@ -1,11 +1,14 @@
-Vagrant::Config.run do |config|
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
-  config.vm.forward_port 80, 8080
-  config.vm.forward_port 2003, 2003
-  config.vm.forward_port 8125, 8125, { :protocol => 'udp' }
+  config.vm.hostname = "vagrant.example.com"
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 2003, host: 2003
+  config.vm.network "forwarded_port", guest: 8125, host: 8125, protocol: 'udp'
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
