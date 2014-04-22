@@ -36,3 +36,4 @@ Pin-Priority: 550
 
 include carbon
 include statsd
+# include grafana
