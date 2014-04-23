@@ -16,4 +16,4 @@ file { "/etc/apt/preferences" :
 
 include carbon
 include statsd
-# include grafana
+include grafana
