@@ -10,7 +10,7 @@ exec { "apt-get-update" :
 }
 
 file { "/etc/apt/preferences" :
-  source => "puppet://apt.preferences",
+  source => "puppet:///modules/base/apt.preferences",
   ensure => present,
 }
 
